@@ -1,0 +1,15 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore lock file (optional, depending on your workflow)
+package-lock.json
+
+# Ignore environment variables and sensitive files
+.env
+
+# Ignore temporary files or editor-specific files
+*.log
+.DS_Store
+*.swp
+
+plan.md

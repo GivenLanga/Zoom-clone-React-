@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoom Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main_left">
+        <div class="main_video">
+          <div id="video-grid"></div>
+        </div>
+        <div class="main_controls">
+          <div class="main_controls_block">
+            <div onclick="muteUnmute()" class="main_controls_button mute-btn">
+              <span class="material-symbols-outlined"> mic </span>
+              <span>Mute</span>
+            </div>
+
+            <div onclick="playStop()" class="main_controls_button stop-video">
+              <span class="material-symbols-outlined"> videocam </span>
+              <span>Stop video</span>
+            </div>
+          </div>
+
+          <div class="main_controls_block">
+            <div class="main_controls_button">
+              <span class="material-symbols-outlined"> security </span>
+              <span>Security</span>
+            </div>
+
+            <div class="main_controls_button">
+              <span class="material-symbols-outlined"> group </span>
+              <span>Participants</span>
+            </div>
+            <div class="main_controls_button">
+              <span class="material-symbols-outlined"> chat </span>
+              <span>Chat</span>
+            </div>
+          </div>
+
+          <div class="main_controls_block">
+            <div class="main_controls_button">
+              <!--  <span class="material-symbols-outlined"> videocam </span> -->
+              <span class="leave-mtn">Leave Meeting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_right">
+        <div class="main_header">
+          <h6>Chat</h6>
+        </div>
+
+        <div class="chat-window">
+          <ul class="messages"></ul>
+        </div>
+
+        <div class="main_messeage_container">
+          <input
+            type="text"
+            id="chat_message"
+            placeholder="Type message here..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
